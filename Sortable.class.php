@@ -35,7 +35,7 @@ class Sortable
 	 * initializes all data objects that need to persist throughout this class
 	 * 
 	 * @params	none
-     * @returns nothing
+	 * @returns nothing
 	 */
 	private function init()
 	{
