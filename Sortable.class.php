@@ -14,7 +14,7 @@ class Sortable
 	private $duplicateResultsArray;	// array representing the matched results 
 
 	// ********************************************************************
-	//						C O N S T R U C T O R 	
+	//	C O N S T R U C T O R 	
 	// ********************************************************************
 	/**
 	 * possibly we could take in parameters so that the program act differently
@@ -29,7 +29,7 @@ class Sortable
 	}//C O N S T R U C T O R 
 	
 	// ********************************************************************
-	//							init	
+	//	init	
 	// ********************************************************************
 	/**
 	 * initializes all data objects that need to persist throughout this class
@@ -47,13 +47,13 @@ class Sortable
 	}//init
 	
 	// ********************************************************************
-	//							run
+	//	run
 	// ********************************************************************
 	/**
 	 * runs the application by testing the files and finding the matches
 	 *
 	 * @params	none
-     * @returns nothing
+	 * @returns nothing
 	 */
 	public function run()
 	{
@@ -70,7 +70,7 @@ class Sortable
 	}//run
 
 	// ********************************************************************
-	//							createRegex	
+	//	createRegex	
 	// ********************************************************************
 	/**
 	 * replaces all non-alphanumeric characters with a regex to allow for optional non-alphanumeric
@@ -78,7 +78,7 @@ class Sortable
 	 * IE. DSC-101 should match DSC 101
 	 * 
 	 * @params	value	    	 <String> what we will be needing to search for
-     * @returns returnExpression <String> as a regular expression
+	 * @returns returnExpression <String> as a regular expression
 	 */
 	private function createRegex( $value ) 
 	{
@@ -88,7 +88,7 @@ class Sortable
 	}//createRegex
 
 	// ********************************************************************
-	//							addToOutput	
+	//	addToOutput	
 	// ********************************************************************
 	/**
 	 * given the input, adds the listing to the array indexed by productName
@@ -97,7 +97,7 @@ class Sortable
 	 * 
 	 * @params	listing	    <object> representing the listing that matched the product
 	 * 		    productName <String> representing the product that was matched
-     * @returns true if the listing was added, false otherwise
+	 * @returns true if the listing was added, false otherwise
 	 */
 	private function addToOutput( &$listing , $productName )
 	{
@@ -120,14 +120,14 @@ class Sortable
 	}//addToOutput
 
 	// ********************************************************************
-	//							addToDuplicates	
+	//	addToDuplicates	
 	// ********************************************************************
 	/**
 	 * given the input, adds the listing to the array indexed by productName
 	 * 
 	 * @params	productName <String> representing the product that was matched
 	 *			listing	    <object> representing the listing that matched the product
-     * @returns nothing
+	 * @returns nothing
 	 */
 	private function addToDuplicates( $listingTitle , &$productsArray )
 	{
@@ -136,13 +136,13 @@ class Sortable
 	}//addToDuplicates
 	
 	// ********************************************************************
-	//							testFiles	
+	//	testFiles	
 	// ********************************************************************
 	/**
 	 * verifies that the input files are readable, and output file is writable
 	 * 
 	 * @params	none
-     * @return  true if all 3 files are ok, false otherwise
+	 * @return  true if all 3 files are ok, false otherwise
 	 */
 	private function testFiles(  )
 	{
@@ -179,21 +179,21 @@ class Sortable
 
 	
 	// ********************************************************************
-	//							findMatches	
+	//	findMatches	
 	// ********************************************************************
 	/**
 	 * for each listing in the listing array, it looks for a matching product
 	 * Algorithm:   First find a matching manufacturer
 	 *				than find the model within the listing title
 	 *              finally see if the family is also in the title
-     * if there is a match, it adds it to the output array. However, it also keeps
+	 * if there is a match, it adds it to the output array. However, it also keeps
 	 * track of how many are found .. because if more than 1 is found, than it
 	 * cancels out, since only 1 product can match a listing, and obviously
 	 * the listing has TOO many key words for software to match.
 	 * This SNEAKY little listing is added to another array to be handled by the boss ( humans )
 	 * 
 	 * @params	none
-     * @returns  nothing
+	 * @returns  nothing
 	 */
 	private function findMatches(  )
 	{	
@@ -334,7 +334,7 @@ class Sortable
 	}//findMatches
 	
 	// ********************************************************************
-	//							outputResults	
+	//	outputResults	
 	// ********************************************************************
 	/**
 	 * iterates through the array and outputs to the appropriate file
@@ -361,7 +361,7 @@ class Sortable
 	}//outputResults
 
 	// ********************************************************************
-	//							traceFunction	
+	//	traceFunction	
 	// ********************************************************************
 	/**
 	 * outputs the message .. and flushes the buffer if flushbuffer is set
